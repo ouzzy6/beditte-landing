@@ -1,0 +1,262 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --- FONDO CON IMAGEN (ANCHO COMPLETO) --- */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45) saturate(0.85) contrast(1.05);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.35) 40%,
+      rgba(0, 0, 0, 0.75) 80%,
+      rgba(0, 0, 0, 0.92) 100%
+    );
+}
+
+/* --- CONTENIDO SUPERPUESTO --- */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 520px;
+}
+
+/* --- BADGE --- */
+.hero-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 6px;
+  text-transform: lowercase;
+  margin-bottom: 32px;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding-left: 16px;
+}
+
+/* --- TÍTULO --- */
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-bottom: 24px;
+}
+
+.title-line {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 80px;
+  color: #FFFFFF;
+ 
+  line-height: 1.08;
+}
+
+.title-line.title-soft {
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 42px;
+  
+}
+
+/* --- DESCRIPCIÓN --- */
+.hero-description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.9;
+  margin-bottom: 40px;
+  max-width: 380px;
+  
+}
+
+/* --- BOTONES --- */
+.hero-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cta-primary {
+  background: rgba(255, 255, 255, 0.92);
+  color: #0A0A0A;
+  border: none;
+  padding: 16px 48px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 2px;
+  width: fit-content;
+}
+
+.cta-primary:hover {
+  background: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.store-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.store-button {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 24px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  transition: all 0.3s ease;
+}
+
+.store-button:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.store-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1.5px;
+}
+
+.store-status {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.2);
+  margin-top: 3px;
+  letter-spacing: 1.5px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-badge {
+    align-self: center;
+    border-left: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 0;
+    padding-bottom: 12px;
+  }
+
+  .title-line {
+    font-size: 38px;
+  }
+
+  .title-line.title-soft {
+    font-size: 34px;
+  }
+
+  .hero-description {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-primary {
+    margin: 0 auto;
+  }
+
+  .store-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: 600px;
+  }
+
+  .hero-badge {
+    font-size: 10px;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+  }
+
+  .title-line {
+    font-size: 30px;
+    letter-spacing: 0.5px;
+  }
+
+  .title-line.title-soft {
+    font-size: 26px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    max-width: 320px;
+  }
+
+  .cta-primary {
+    padding: 14px 36px;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+  }
+
+  .store-button {
+    min-width: 90px;
+    padding: 8px 14px;
+  }
+
+  .store-name {
+    font-size: 10px;
+  }
+
+  .store-status {
+    font-size: 8px;
+  }
+}
