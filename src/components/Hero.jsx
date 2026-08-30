@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
-import heroImage from '/paris_night_walk_1.jpg'; // ← Sustituye por tu foto
+import heroImage from '/paris_night_walk_1.jpg';
+import appScreenshot from '/Screenshot_20260830_195253.png'; // ← Asegúrate de que el nombre del archivo coincida
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
       </div>
 
       <div className="hero-left">
-        <div className="hero-eyebrow">citas con intención estética</div>
+        <div className="hero-eyebrow">citas o nuevas amistades</div>
         <h1 className="hero-h1">
           conexiones<br />
           <em>en un contexto de moda.</em>
@@ -31,8 +32,11 @@ const Hero = () => {
 
       <div className="hero-right">
         <div className="hero-phone-placeholder">
-          <span className="phone-icon">📱</span>
-          captura de app
+          <img 
+            src={appScreenshot} 
+            alt="Beditte app" 
+            className="hero-phone-image" 
+          />
         </div>
       </div>
 
