@@ -5,43 +5,62 @@
   right: 0;
   z-index: 1000;
   background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: backdrop-filter 0.3s, background 0.3s;
 }
 
 .header-content {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px 24px;
+  width: 100%;
+  padding: 24px 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
-  font-size: 28px;
-  letter-spacing: 0px;
+  font-size: 24px;
+  letter-spacing: -0.02em;
   color: #FFFFFF;
   text-transform: lowercase;
+  text-decoration: none;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+.header-center {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
 }
 
 .nav-desktop {
   display: flex;
-  gap: 48px;
+  gap: 40px;
   align-items: center;
+  z-index: 2;
 }
 
 .nav-link {
   font-family: 'Montserrat', sans-serif;
-  font-weight: 300;
+  font-weight: 500;
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 2.5px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  transition: color 0.2s ease;
   position: relative;
 }
 
@@ -53,7 +72,7 @@
   width: 0;
   height: 1px;
   background: rgba(255, 255, 255, 0.6);
-  transition: width 0.3s ease;
+  transition: width 0.2s ease;
 }
 
 .nav-link:hover {
@@ -72,6 +91,7 @@
   border: none;
   cursor: pointer;
   padding: 4px;
+  z-index: 2;
 }
 
 .hamburger-line {
@@ -102,6 +122,7 @@
   text-transform: uppercase;
   padding: 14px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -113,9 +134,21 @@
   border-bottom: none;
 }
 
-@media (max-width: 768px) {
+/* Cuando el nav tiene scroll */
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
   .header-content {
-    padding: 16px 20px;
+    padding: 20px 24px;
+  }
+
+  .header-center {
+    display: none;  /* Oculta el texto en móvil para no saturar */
   }
 
   .nav-desktop {
@@ -128,5 +161,15 @@
 
   .mobile-menu {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    padding: 16px 16px;
+  }
+
+  .logo {
+    font-size: 18px;
   }
 }

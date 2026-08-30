@@ -1,11 +1,26 @@
+:root {
+  --black: #000000;
+  --black-2: #0a0a0a;
+  --black-3: #111111;
+  --white: #ffffff;
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-35: rgba(255, 255, 255, 0.35);
+  --white-15: rgba(255, 255, 255, 0.15);
+  --white-08: rgba(255, 255, 255, 0.08);
+  --white-04: rgba(255, 255, 255, 0.04);
+
+  --street: #c0394d;
+  --minimal: #4b7fc4;
+  --tech: #9b7fe0;
+  --retro: #b8c732;
+  --boho: #22c55e;
+  --y2k: #e87ca0;
+
+  --font: 'Montserrat', sans-serif;
+}
+
 .app {
   width: 100%;
   margin: 0;
   padding: 0;
-}
-
-.section-container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px;
 }

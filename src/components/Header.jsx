@@ -4,17 +4,23 @@ import './Header.css';
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navItems = ['Sobre Beditte', 'Estilos', 'Descarga'];
+  const navItems = [
+    { label: 'Cómo funciona', href: '#como' },
+    { label: 'Estilos', href: '#estilos' },
+    { label: 'Descarga', href: '#descarga' },
+  ];
 
   return (
     <header className="header">
       <div className="header-content">
-        <div className="logo">beditte.</div>
+        <a href="#" className="logo">beditte.</a>
+
+        <div className="header-center">WITH LOTS OF LOVE</div>
 
         <nav className="nav-desktop">
           {navItems.map((item) => (
-            <a key={item} href={`#${item.toLowerCase().replace(' ', '-')}`} className="nav-link">
-              {item}
+            <a key={item.label} href={item.href} className="nav-link">
+              {item.label}
             </a>
           ))}
         </nav>
@@ -30,12 +36,12 @@ const Header = () => {
         <div className="mobile-menu">
           {navItems.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
+              key={item.label}
+              href={item.href}
               className="mobile-nav-link"
               onClick={() => setMenuOpen(false)}
             >
-              {item}
+              {item.label}
             </a>
           ))}
         </div>

@@ -1,71 +1,213 @@
-.styles-section {
-  padding: 100px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
+.estilos {
+  padding: 140px 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.styles-content {
+/* --- HEADER --- */
+.section-header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 60px;
 }
 
-.styles-grid {
+.section-header-left .eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  margin-bottom: 14px;
+}
+
+.section-header-left h2 {
+  font-size: clamp(32px, 3vw, 48px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.section-header-left h2 em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.section-header-right {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.35);
+  max-width: 320px;
+  text-align: right;
+}
+
+/* --- GRID --- */
+.estilos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 780px;
-  width: 100%;
-  margin-top: 48px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2px;
 }
 
-.style-card {
+/* --- TARJETA --- */
+.estilo-card {
   position: relative;
-  aspect-ratio: 4 / 5;
-  background: #0D0D0D;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  transition: all 0.4s ease;
+  aspect-ratio: 2/3;
   cursor: default;
 }
 
-.style-card:hover {
-  transform: scale(1.03);
-  background: #1A1A1A;
+.estilo-card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  transition: transform 0.6s ease;
 }
 
-.style-gradient {
+.estilo-card:hover .estilo-card-bg {
+  transform: scale(1.05);
+}
+
+/* --- BACKGROUND POSITIONS PERSONALIZADAS POR ESTILO --- */
+.estilo-card.streetwear .estilo-card-bg {
+  background-position: center 15%;
+}
+
+.estilo-card.minimal .estilo-card-bg {
+  background-position: center 20%;
+}
+
+.estilo-card.techwear .estilo-card-bg {
+  background-position: center 80%;
+}
+
+.estilo-card.retro .estilo-card-bg {
+  background-position: center 85%;
+}
+
+.estilo-card.boho .estilo-card-bg {
+  background-position: center 15%;
+}
+
+.estilo-card.y2k .estilo-card-bg {
+  background-position: center 10%;
+}
+
+.estilo-card-overlay {
   position: absolute;
-  top: 0;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.88) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  transition: opacity 0.3s;
+}
+
+.estilo-card:hover .estilo-card-overlay {
+  opacity: 0.7;
+}
+
+.estilo-card-accent {
+  position: absolute;
+  bottom: 0;
   left: 0;
   right: 0;
+  height: 3px;
+}
+
+/* --- INFO --- */
+.estilo-card-info {
+  position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 16px;
 }
 
-.style-name {
-  position: relative;
-  z-index: 1;
-  font-family: 'Montserrat', sans-serif;
+.estilo-pill {
+  display: inline-block;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.estilo-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  color: #ffffff;
+}
+
+.estilo-desc {
+  font-size: 10px;
   font-weight: 300;
-  font-size: 14px;
-  color: #FFFFFF;
-  letter-spacing: 4px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s, transform 0.3s;
 }
 
-@media (max-width: 600px) {
-  .styles-section {
-    padding: 60px 0;
+.estilo-card:hover .estilo-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .estilos {
+    padding: 80px 24px;
   }
 
-  .styles-grid {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .section-header-right {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .estilos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .estilos {
+    padding: 60px 16px;
+  }
+
+  .estilos-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    margin-top: 32px;
   }
 
-  .style-name {
-    font-size: 12px;
-    letter-spacing: 3px;
+  .estilo-card {
+    aspect-ratio: 2/3;
+  }
+
+  .estilo-name {
+    font-size: 11px;
+  }
+
+  .estilo-desc {
+    font-size: 9px;
+  }
+
+  .estilo-card-info {
+    padding: 12px 10px;
   }
 }

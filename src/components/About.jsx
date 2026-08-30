@@ -3,30 +3,32 @@ import './About.css';
 
 const About = () => {
   return (
-    <section className="about" id="sobre-beditte">
-      <div className="about-content">
-        <span className="section-label">SOBRE BEDITTE</span>
-        <h2 className="section-title">MODA + CONEXIONES</h2>
-        <p className="about-description">
-          Beditte nace de la idea de que el estilo personal es una forma de expresión.<br />
-          No solo conectamos personas, conectamos estéticas.
+    <section className="sobre" id="sobre">
+      <div className="sobre-left">
+        <div className="eyebrow">sobre beditte</div>
+        <h2>
+          moda <em>+<br />conexión.</em>
+        </h2>
+        <p>
+          Beditte nace de la idea de que el estilo personal es una forma de expresión única. No solo conectamos personas — conectamos estéticas, tribus, visiones del mundo a través de la ropa.
         </p>
-
-        <div className="stats">
-          <div className="stat">
-            <span className="stat-number">6</span>
-            <span className="stat-label">Estilos únicos</span>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat">
-            <span className="stat-number">100%</span>
-            <span className="stat-label">Editorial</span>
-          </div>
-          <div className="stat-divider"></div>
-          <div className="stat">
-            <span className="stat-number">∞</span>
-            <span className="stat-label">Conexiones</span>
-          </div>
+      </div>
+      <div className="sobre-right">
+        <div className="stat">
+          <div className="stat-num">6</div>
+          <div className="stat-label">estilos únicos</div>
+        </div>
+        <div className="stat">
+          <div className="stat-num">100%</div>
+          <div className="stat-label">conexiones reales</div>
+        </div>
+        <div className="stat">
+          <div className="stat-num">0</div>
+          <div className="stat-label">algoritmos opacos</div>
+        </div>
+        <div className="stat">
+          <div className="stat-num">∞</div>
+          <div className="stat-label">posibilidades</div>
         </div>
       </div>
     </section>
