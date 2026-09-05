@@ -1,7 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import heroImage from '/paris_night_walk_1.jpg';
-import appScreenshot from '/Screenshot_20260830_195253.png'; // ← Asegúrate de que el nombre del archivo coincida
+import appScreenshot from '/Frame 4.png'; // ← Asegúrate de que el nombre del archivo coincida
 
 const Hero = () => {
   return (
